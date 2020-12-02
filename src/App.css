@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,36 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+.bg {
+  background: rgb(63,94,251);
+  background: radial-gradient(circle, rgba(63,94,251,1) 4%, rgba(40,22,26,1) 97%);
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  margin-top: 0px;
+  text-align: center;
+}
+
+.head {
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
+}
+
+.MuiInputBase-input {
+  height: 50px;
+    outline: none;
+    font-size: 23px;
+    width: 400px;
+    
+    color: white!important;
+    border: none;
+    padding-left: 13px;
+}
+
+.add, .del {
+  margin-left: 10px!important;
 }
