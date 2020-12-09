@@ -1,35 +1,33 @@
 import React, { useState } from 'react';
 import { Button, TextField } from '@material-ui/core'
 import List from './List'
-import { fire } from './Firebase'
+import { Fire } from './Firebase'
 
 export default function Register() {
   const [userData, setUserData] = useState('');
   const [arr, setArr] = useState([]);
-  const [todo, setTodo] = useState("");
 
   const addData = () => {
     arr.push({ value: userData, editValue: false })
     setArr([...arr])
+
+    //Save data to DB
+    Fire.collection("data").add({
+      todo: userData
+    })
+      .then(() => {
+        console.log("Todos has been saved successfully")
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+
     setUserData('')
-    
   }
 
   const delData = () => {
     setArr([])
   }
-
-  fire.collection("data").add({
-    todo: todo
-  })
-    .then(() => {
-      alert("Todos has been saved successfully")
-    })
-    .catch((error) => {
-      alert(error.message);
-    });
-
-  setTodo("");
 
   return (
     <div className='container-fluid bg'>
@@ -41,7 +39,7 @@ export default function Register() {
       <div className="todo">
         <TextField id="standard-basic" label="Todo Items" onChange={e => setUserData(e.target.value)} value={userData} />
 
-        <Button variant="contained" className="add" size="small" color="primary" value={todo} onClick={() => addData()} >Add Todo</Button>
+        <Button variant="contained" className="add" size="small" color="primary"  onClick={() => addData()} >Add Todo</Button>
 
         <Button variant="contained" className="del" size="small" color="secondary" onClick={() => delData()}>Delete All</Button>
       </div>

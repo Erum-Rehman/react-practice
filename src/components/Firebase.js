@@ -1,15 +1,14 @@
-import firebase from 'firebase'
+import firebase from 'firebase';
 
-var firebaseApp = firebase.initializeApp({
-    apiKey: "AIzaSyAiHwQhpiFjoiZ48nY0qJVAgeHX90yMqhE",
-    authDomain: "react-practice-f6985.firebaseapp.com",
-    projectId: "react-practice-f6985",
-    storageBucket: "react-practice-f6985.appspot.com",
-    messagingSenderId: "857639358366",
-    appId: "1:857639358366:web:b7ba5d813fd613ff6b108f",
-    measurementId: "G-VJ1K5WNK0J"
+var myApp = firebase.initializeApp({
+    apiKey: "AIzaSyCQYy0PfgiMtmeufXZId_6exCJVvUULxu0",
+    authDomain: "react-project-9f683.firebaseapp.com",
+    projectId: "react-project-9f683",
+    storageBucket: "react-project-9f683.appspot.com",
+    messagingSenderId: "348428488640",
+    appId: "1:348428488640:web:50ce73ded5c0cb507b8225",
+    measurementId: "G-MWGHQR50FC"
   });
-  
-  var fire = firebaseApp.firestore();
+ var Fire = myApp.firestore();
 
-export { fire }
+ export { Fire }

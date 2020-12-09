@@ -11,7 +11,6 @@ const List = ({ data, setData }) => {
     }
 
 const updateArr = (e) => {
-    console.log(e.target.value, "e.target.value")
     setUserInput(e.target.value) 
 }
 const update = (e,index) => {
